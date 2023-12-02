@@ -30,7 +30,7 @@ body {
     }
 }
 
-// gameboard
+// GAMEBOARD
 
 .gameboard {
     height: 600px;
@@ -41,10 +41,10 @@ body {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     border: 1px solid $colourOne;
-    min-width: 320px;
+    min-width: 320px; 
 
     .square {
-        border: 0.1px solid $colourOne;    
+        border: 0.1px solid $colourOne; 
     }
 }
 
@@ -56,5 +56,42 @@ body {
     color: $colourOne;
 };
 
-results card pop up
+// RESULTS POP UP CARD
+
+.background {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    @include flex;
+
+    .results-card {
+        text-align: center;
+        width: 10%;
+        min-width: 320px;
+        height: 250px;
+        background-color: #dbd8e3;  
+        border-radius: 10px;    
+        padding: 4px;
+    }
+    
+    p {
+        font-size: 2rem;
+    }
+    
+    button {
+        margin-top: 30px;
+        padding: 10px 20px;
+        color: white;
+        background-color: $colourOne;
+        border-radius: 20px;
+        width: 120px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        font-weight: 600;
+    }
+}
+
+
 

@@ -1,10 +1,15 @@
+// need to add x and o images and make reset button work
+
 const square = document.querySelectorAll('.square');
 const turn = document.querySelector('.turn');
-const winningText = document.querySelector('.results-text')
+let restart = document.querySelector('button')
+const winningText = document.querySelector('.results-text');
+let resultsCard = document.querySelector('.background')
 let player1 = "X";
 let player2 = "O";
 let currentPlayer = player1;
-let gameRunning = true;
+let gameRunning = false;
+
 
 let grid = ["", "", "", "", "", "", "", "", ""]
 let winningCombo = [
@@ -19,15 +24,18 @@ let winningCombo = [
 ];
 
 function startGame() {
-    turn.textContent = "Player 1's turn!"
-    square.forEach(cell => {
-        cell.addEventListener("click", cellClicked, { once: true })
-    })
-};
+    gameRunning = true;
+    square.forEach(cell => cell.addEventListener("click", cellClicked));
+}
+
 startGame();
 
 function cellClicked(e) {
-    let cellIndex = e.target.getAttribute('data-cell-index')
+    const cellIndex = parseInt(e.target.getAttribute('data-cell-index'))
+
+    if (grid[cellIndex] !== "" || !gameRunning) {
+        return;
+    }
 
     if (currentPlayer === player1) {
         grid[cellIndex] = player1
@@ -40,10 +48,13 @@ function cellClicked(e) {
         currentPlayer = player1
         turn.textContent = "Player 1's turn!"
     }
+    console.log(grid)
+    pickWinner();
 }
 
 function pickWinner() {
-    for (i = 0; i < winningCombo; i++) {
+    let roundWon = false
+    for (let i = 0; i < winningCombo.length; i++) {
         let winCondition = winningCombo[i];
         let a = grid[winCondition[0]];
         let b = grid[winCondition[1]];
@@ -54,7 +65,43 @@ function pickWinner() {
         }
 
         if (a === b && b === c) {
-            
+            console.log("winner")
+            roundWon = true
+            break;
         }
     }
+
+    if (roundWon) {
+        resultsCard.style.display = "flex";
+        gameRunning = false;
+
+        if (currentPlayer === player1) {
+            turn.textContent = "Player 2 won!"
+            winningText.textContent = "Player 2 won!"
+        } else {
+            turn.textContent = "Player 1 won!"
+            winningText.textContent = "Player 1 won!"
+        }
+        return;
+    }
+
+    if (!grid.includes("")) {
+        resultsCard.style.display = "flex";
+        gameRunning = false;
+        turn.textContent = "Draw!"
+        winningText.textContent = "Draw!"
+        return;
+    }
 }
+
+restart.addEventListener("click", restartGame)
+
+function restartGame() {
+    gameRunning = true;
+    currentPlayer = player1
+    let grid = ["", "", "", "", "", "", "", "", ""];
+    turn.textContent = "Player 1's turn!"
+    resultsCard.style.display = "none";
+    square.forEach(cell => cell.textContent = "");
+}
+

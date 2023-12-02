@@ -13,13 +13,8 @@
     <div class="header">
         <h1>tic tac toe</h1>
     </div>
-
-    <div class="results-card" style="display: none">
-        <p class="results-text"></p>
-        <button type="button">Restart</button>
-    </div>
     
-    <div class="turn"></div>
+    <div class="turn">Player 1's turn!</div>
 
     <div class="gameboard">
         <div data-cell-index="0" class="square"></div>
@@ -31,6 +26,13 @@
         <div data-cell-index="6" class="square"></div>
         <div data-cell-index="7" class="square"></div>
         <div data-cell-index="8" class="square"></div>
+    </div>
+    
+    <div class="background" style="display: none;">
+        <div class="results-card">
+            <p class="results-text">You won!</p>
+            <button class="restart">Restart</button>
+        </div>
     </div>
     <script src="main.js"></script>
 </body>

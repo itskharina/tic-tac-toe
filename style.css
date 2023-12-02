@@ -43,4 +43,38 @@ body {
   margin-top: 50px;
   font-weight: 600;
   color: #3b3a30;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.background .results-card {
+  text-align: center;
+  width: 10%;
+  min-width: 320px;
+  height: 250px;
+  background-color: #dbd8e3;
+  border-radius: 10px;
+  padding: 4px;
+}
+.background p {
+  font-size: 2rem;
+}
+.background button {
+  margin-top: 30px;
+  padding: 10px 20px;
+  color: white;
+  background-color: #3b3a30;
+  border-radius: 20px;
+  width: 120px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  font-weight: 600;
 }/*# sourceMappingURL=style.css.map */
