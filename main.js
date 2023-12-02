@@ -1,4 +1,4 @@
-// need to add x and o images and make reset button work
+// need to add x and o images
 
 const square = document.querySelectorAll('.square');
 const turn = document.querySelector('.turn');
@@ -99,9 +99,9 @@ restart.addEventListener("click", restartGame)
 function restartGame() {
     gameRunning = true;
     currentPlayer = player1
-    let grid = ["", "", "", "", "", "", "", "", ""];
+    grid = ["", "", "", "", "", "", "", "", ""];
     turn.textContent = "Player 1's turn!"
     resultsCard.style.display = "none";
-    square.forEach(cell => cell.textContent = "");
+    square.textContent = "";
 }
 
