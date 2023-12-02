@@ -1,0 +1,60 @@
+$colourOne: #3b3a30;
+$colorTwo: white;
+
+@mixin flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #b2c2bf;
+    font-family: 'Poppins', 'Roboto', sans-serif;
+}
+
+// HEADER
+
+.header {
+    @include flex;
+    background-color: $colourOne;
+    color: $colorTwo;
+    
+    h1 {
+        font-size: 2.2rem;
+    }
+}
+
+// gameboard
+
+.gameboard {
+    height: 600px;
+    width: 600px;
+    margin: 20px auto;
+    background-color: $colorTwo;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    border: 1px solid $colourOne;
+    min-width: 320px;
+
+    .square {
+        border: 0.1px solid $colourOne;    
+    }
+}
+
+.turn {
+    @include flex;
+    font-size: 1.6rem;
+    margin-top: 50px;
+    font-weight: 600;
+    color: $colourOne;
+};
+
+results card pop up
+
