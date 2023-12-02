@@ -1,3 +1,4 @@
+
 // need to add x and o images
 
 const square = document.querySelectorAll('.square');
@@ -102,6 +103,6 @@ function restartGame() {
     grid = ["", "", "", "", "", "", "", "", ""];
     turn.textContent = "Player 1's turn!"
     resultsCard.style.display = "none";
-    square.textContent = "";
+    square.forEach(cell => cell.textContent = "");
 }
 
