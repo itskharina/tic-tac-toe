@@ -1,6 +1,3 @@
-
-// need to add x and o images
-
 const square = document.querySelectorAll('.square');
 const turn = document.querySelector('.turn');
 let restart = document.querySelector('button')
@@ -20,9 +17,9 @@ let winningCombo = [
     [0, 3, 6],
     [1, 4, 7],
     [2, 5, 8],
-    [3, 5, 7],
-    [0, 3, 8]
-];
+    [0, 4, 8],
+    [2, 4, 6]
+]
 
 function startGame() {
     gameRunning = true;

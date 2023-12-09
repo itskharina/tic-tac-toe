@@ -41,10 +41,14 @@ body {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     border: 1px solid $colourOne;
-    min-width: 320px; 
+    min-width: 320px;
+    font-family: "Paytone One", sans-serif;
+    text-align: center;
+    font-size: 8rem;
 
     .square {
-        border: 0.1px solid $colourOne; 
+        border: 0.1px solid $colourOne;
+        cursor: pointer;
     }
 }
 
@@ -90,8 +94,9 @@ body {
         width: 120px;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         font-weight: 600;
+        cursor: pointer;   
+        &:active {
+            transform: translateY(4px);
+        }
     }
 }
-
-
-

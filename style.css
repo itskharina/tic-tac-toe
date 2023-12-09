@@ -30,9 +30,13 @@ body {
   grid-template-rows: repeat(3, 1fr);
   border: 1px solid #3b3a30;
   min-width: 320px;
+  font-family: "Paytone One", sans-serif;
+  text-align: center;
+  font-size: 8rem;
 }
 .gameboard .square {
   border: 0.1px solid #3b3a30;
+  cursor: pointer;
 }
 
 .turn {
@@ -77,4 +81,8 @@ body {
   width: 120px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   font-weight: 600;
+  cursor: pointer;
+}
+.background button:active {
+  transform: translateY(4px);
 }/*# sourceMappingURL=style.css.map */
